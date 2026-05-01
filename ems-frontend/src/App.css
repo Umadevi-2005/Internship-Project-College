@@ -1,0 +1,25 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  height: 50px;
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+/* Modern Button Hover */
+.btn-success {
+    background: linear-gradient(45deg, #10b981, #059669);
+    border: none;
+    transition: transform 0.2s;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.4);
+}
+
+/* Rounded Cards */
+.card {
+    border-radius: 15px !important;
+}
