@@ -1,6 +1,6 @@
 package net.javaguides.ems.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+// @AllArgsConstructor
 @Entity
 @Table(name = "departments")
 public class Department {
@@ -18,20 +18,19 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "department_name")
+    public Department(Long id, String departmentName, String departmentDescription) {
+		super();
+		this.id = id;
+		this.departmentName = departmentName;
+		this.departmentDescription = departmentDescription;
+	}
+
+	@Column(name = "department_name")
     private String departmentName;
 
 
 	@Column(name = "department_description")
     private String departmentDescription;
-	
-	public Department(Long id2, String departmentName2, String departmentDescription2) {
-        this.id = id2;
-        this.departmentName = departmentName2;
-        this.departmentDescription = departmentDescription2;
-    }
-    
-    public Department() {}
 
 	public Long getId() {
 		return id;

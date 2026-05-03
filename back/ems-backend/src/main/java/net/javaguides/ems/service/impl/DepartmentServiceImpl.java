@@ -13,14 +13,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
+// @AllArgsConstructor
 public class DepartmentServiceImpl implements DepartmentService {
-
+    
     private DepartmentRepository departmentRepository;
 
-    public DepartmentServiceImpl(DepartmentRepository departmentRepository) {
-        this.departmentRepository = departmentRepository;
-    }
+     public DepartmentServiceImpl(DepartmentRepository departmentRepository) {
+         this.departmentRepository = departmentRepository;
+     }
     @Override
     public DepartmentDto createDepartment(DepartmentDto departmentDto) {
         Department department = DepartmentMapper.mapToDepartment(departmentDto);

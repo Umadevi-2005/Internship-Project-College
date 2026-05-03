@@ -8,17 +8,19 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+// @AllArgsConstructor
 public class EmployeeDto {
     private Long id;
     private String firstName;
     private String lastName;
     private String email;
-	public EmployeeDto(Long id2, String firstName2, String lastName2, String email2) {
-		this.id = id2;
-		this.firstName = firstName2;
-		this.lastName = lastName2;
-		this.email = email2;
+	
+	public EmployeeDto(Long id, String firstName, String lastName, String email) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
 	}
 	public Long getId() {
 		return id;

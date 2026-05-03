@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
+// @AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/departments")
 public class DepartmentController {
 	
-    private DepartmentService departmentService;
-
+    private final DepartmentService departmentService;
     public DepartmentController(DepartmentService departmentService) {
         this.departmentService = departmentService;
     }
+
     // Build Create or Add Department REST API
     @PostMapping
     public ResponseEntity<DepartmentDto> createDepartment(@RequestBody DepartmentDto departmentDto){

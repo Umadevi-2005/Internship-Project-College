@@ -3,24 +3,23 @@ package net.javaguides.ems.controller;
 import lombok.AllArgsConstructor;
 import net.javaguides.ems.dto.EmployeeDto;
 import net.javaguides.ems.service.EmployeeService;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:3000")
-@AllArgsConstructor
+// @AllArgsConstructor
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {
-
     private EmployeeService employeeService;
-
     public EmployeeController(EmployeeService employeeService) {
-        this.employeeService = employeeService;
-    }
-    // Build Add Employee REST API
+		this.employeeService = employeeService;
+	}
+
+	// Build Add Employee REST API
     @PostMapping
     public ResponseEntity<EmployeeDto> createEmployee(@RequestBody EmployeeDto employeeDto){
         EmployeeDto savedEmployee = employeeService.createEmployee(employeeDto);

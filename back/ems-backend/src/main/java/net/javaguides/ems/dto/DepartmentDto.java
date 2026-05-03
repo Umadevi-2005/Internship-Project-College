@@ -8,23 +8,23 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+// @AllArgsConstructor
 public class DepartmentDto {
     private Long id;
     private String departmentName;
     private String departmentDescription;
-    
-    public DepartmentDto(Long id2, String departmentName2, String departmentDescription2) {
-        this.id = id2;
-        this.departmentName = departmentName2;
-        this.departmentDescription = departmentDescription2;
-    }
     
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public DepartmentDto(Long id, String departmentName, String departmentDescription) {
+		super();
+		this.id = id;
+		this.departmentName = departmentName;
+		this.departmentDescription = departmentDescription;
 	}
 	public String getDepartmentName() {
 		return departmentName;
