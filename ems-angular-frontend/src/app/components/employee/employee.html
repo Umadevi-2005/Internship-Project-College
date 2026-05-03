@@ -1,0 +1,55 @@
+<div class="container">
+  <br /><br />
+  <div class="row">
+    <div class="card col-md-6 offset-md-3">
+      <h2 class="text-center">{{ pageTitle() }}</h2>
+      <div class="card-body">
+        <form (ngSubmit)="saveOrUpdateEmployee()">
+
+          <div class="form-group mb-2">
+            <label class="form-label">First Name:</label>
+            <input type="text" placeholder="Enter Employee First Name" name="firstName"
+              [(ngModel)]="firstName" [class.is-invalid]="errors.firstName" class="form-control" />
+            @if (errors.firstName) {
+              <div class="invalid-feedback">{{ errors.firstName }}</div>
+            }
+          </div>
+
+          <div class="form-group mb-2">
+            <label class="form-label">Last Name:</label>
+            <input type="text" placeholder="Enter Employee Last Name" name="lastName"
+              [(ngModel)]="lastName" [class.is-invalid]="errors.lastName" class="form-control" />
+            @if (errors.lastName) {
+              <div class="invalid-feedback">{{ errors.lastName }}</div>
+            }
+          </div>
+
+          <div class="form-group mb-2">
+            <label class="form-label">Email:</label>
+            <input type="text" placeholder="Enter Employee Email" name="email"
+              [(ngModel)]="email" [class.is-invalid]="errors.email" class="form-control" />
+            @if (errors.email) {
+              <div class="invalid-feedback">{{ errors.email }}</div>
+            }
+          </div>
+
+          <div class="form-group mb-2">
+            <label class="form-label">Select Department:</label>
+            <select name="departmentId" [(ngModel)]="departmentId"
+              [class.is-invalid]="errors.department" class="form-control">
+              <option value="">Select Department</option>
+              @for (dept of departments; track dept.id) {
+                <option [value]="dept.id">{{ dept.departmentName }}</option>
+              }
+            </select>
+            @if (errors.department) {
+              <div class="invalid-feedback">{{ errors.department }}</div>
+            }
+          </div>
+
+          <button type="submit" class="btn btn-success mb-2">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
